@@ -1,0 +1,53 @@
+<div>
+  <h3>Product List</h3>
+  <div class="search">
+    <span>Name&nbsp;&nbsp;</span>
+    <input type="text" [(ngModel)]="searchData"/>
+  </div>
+  <table>
+    <tr>
+      <th class="parent">Product id
+        <span class="hidden">
+            <i class="fa fa-arrow-up" [hidden]="hideAsc" (click)="sortAsc('productId')"></i>
+            <i class="fa fa-arrow-down" [hidden]="!hideAsc" (click)="sortDesc('productId')"></i>
+        </span>
+      </th>
+      <th class="parent">Name
+          <span class="hidden">
+              <i class="fa fa-arrow-up" [hidden]="hideAsc" (click)="sortAsc('name')"></i>
+              <i class="fa fa-arrow-down" [hidden]="!hideAsc" (click)="sortDesc('name')"></i>
+          </span>
+      </th>
+      <th class="parent">Quantity
+          <span class="hidden">
+              <i class="fa fa-arrow-up" [hidden]="hideAsc" (click)="sortAsc('quantity')"></i>
+              <i class="fa fa-arrow-down" [hidden]="!hideAsc" (click)="sortDesc('quantity')"></i>
+          </span>
+      </th>
+      <th class="parent">Price
+          <span class="hidden">
+              <i class="fa fa-arrow-up" [hidden]="hideAsc" (click)="sortAsc('price')"></i>
+              <i class="fa fa-arrow-down" [hidden]="!hideAsc" (click)="sortDesc('price')"></i>
+          </span>
+      </th>
+      <th class="parent">Category
+          <span class="hidden">
+              <i class="fa fa-arrow-up" [hidden]="hideAsc" (click)="sortAsc('category')"></i>
+              <i class="fa fa-arrow-down" [hidden]="!hideAsc" (click)="sortDesc('category')"></i>
+          </span>
+      </th>
+    </tr>
+    <tr *ngFor="let item of productData | paginate : {itemsPerPage : 15,currentPage : p} | sortBy : column : orderType | filter : searchData : 'name'">
+      <td>{{item.productId}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.category}}</td>
+    </tr>
+  </table>
+  <pagination-controls 
+    class="my-pagination"
+    (pageChange)="p = $event"
+    autoHide="true">
+  </pagination-controls>
+</div>

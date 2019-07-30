@@ -1,0 +1,27 @@
+<div class="mainContainer">
+  <div class="content">
+      <div class="heading">Sign In</div>
+      <form name="loginForm" [formGroup]="loginForm">
+         <div class="formInput">
+            <p>Username</p>
+            <input class="inputBox" type="text" name="username" formControlName="username" [(ngModel)]="username" autocomplete="off" required/>
+            <div *ngIf="loginForm.controls.username.invalid && (loginForm.controls.username.dirty || loginForm.controls.username.touched)">
+               <span *ngIf="loginForm.controls.username.errors.required" class="errorMsg">Username required</span>
+            </div>
+         </div>
+         <div class="formInput">
+         <p>Password</p>
+         <input class="inputBox" type="password" name="password" formControlName="password" [(ngModel)]="password" autocomplete="off" required/>
+         <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">
+            <span *ngIf="loginForm.controls.password.errors.required" class="errorMsg">Password required</span>
+         </div>
+      </div>
+      <div class="loginBtnDiv">
+         <button class="loginBtn" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+      </div>
+    </form>
+     <div class="registerLinkDiv">
+       Don't have account? <a class="registerLink" href="/register">Register here</a>
+     </div>
+  </div>
+</div>

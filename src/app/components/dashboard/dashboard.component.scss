@@ -1,0 +1,84 @@
+.mainContainer{
+    background-image: url(../../../assets/images/background.jpg);
+    background-size: 100% 100%;
+    height: 100%;
+    min-height: 100%;
+    .coursesContainer{
+        position: absolute;
+        width: 70%;
+        left:30%;
+        margin-top:100px;
+        .course{
+            background-size: 100% 100%; 
+            position: relative;
+            width:300px;
+            height: 200px;
+            float: left;
+            margin:20px;
+            margin-right: 30px;
+            text-align: center;
+            border: 1px solid #E3E3E3;
+            box-shadow: 0px 0px 5px #F3F3F3;
+            font-size: 25px;
+            .courseItem{
+                position: absolute;
+                top: 40%;
+                left: 35%;
+            }
+        }
+        .course:hover{
+            background: white !important;
+        }
+        .operations{
+            display: inline-block;
+            margin-left:40px;
+            margin-top:20px;
+            ul{
+                list-style-type:none;
+                li{
+                    margin-bottom: 15px;
+                }
+            }
+            .fa-plus-circle{
+                font-size: 40px;
+                color: #1da1f2;
+                cursor: pointer;
+            }
+            .fa-trash{
+                font-size: 40px;
+                color:red;
+                cursor: pointer;
+            }
+        }
+    }
+    
+}
+#overlay{
+    .formElement{
+        width: 100%;
+        margin: 10px;
+    }
+}
+.courseOperation{
+    margin-top: 65px;
+    float: left;
+    width: 100%;
+    .fa-eye{
+        font-size: 50px;
+        color: blue;
+        cursor: pointer;
+        float: left;
+        margin-left: 80px;
+        cursor: pointer;
+    }
+    .fa-trash{
+        font-size: 50px;
+        color: red;
+        cursor: pointer;
+        float: right;
+        margin-right: 80px;
+        cursor: pointer;
+    }
+}
+.hidden { display:none; }
+.parent:hover .hidden { display: inline}

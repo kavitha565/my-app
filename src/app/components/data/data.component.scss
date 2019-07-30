@@ -1,0 +1,23 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px;
+
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .my-pagination::ng-deep .ngx-pagination .current {   //Applying the ::ng-deep pseudo-class to any CSS rule completely disables view-encapsulation for that rule.
+    background: red;
+  }
+
+.hidden { display:none; }
+.parent:hover .hidden { display: inline}

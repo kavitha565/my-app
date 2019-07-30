@@ -1,0 +1,28 @@
+<div><label>Title</label><input type="text" name="title" [(ngModel)]="title"></div>
+<div><label>Price</label><input type="text" name="price" [(ngModel)]="price"></div>
+<div><label>Description</label><input type="text" name="description" [(ngModel)]="description"/></div>
+<div><label>Image url</label><input type="text" name="imageUrl" [(ngModel)]="imageUrl"/></div>
+<button (click)="addProduct()">Add Product</button>
+<button (click)="getAllProducts()">Get Products</button>
+
+<h3>Product List</h3>
+<ul>
+    <li *ngFor="let product of productList">{{product.title}}-{{product.price}}-{{product.description}}-{{product.imageUrl}}</li>
+</ul>
+
+<h3>Get Product by id</h3>
+<input type="text" [(ngModel)]="productId">
+<button (click)="getProduct()">Get Product</button>
+<h3>Edit Product By Id</h3>
+<input type="text" [(ngModel)]="updateProductId">
+<button (click)="getEditProduct()">Edit Product</button>
+<div *ngIf="showProduct">
+    <div><label>Title</label><input type="text" name="title" [(ngModel)]="editTitle"></div>
+    <div><label>Price</label><input type="text" name="price" [(ngModel)]="editPrice"></div>
+    <div><label>Description</label><input type="text" name="description" [(ngModel)]="editDescription"/></div>
+    <div><label>Image url</label><input type="text" name="imageUrl" [(ngModel)]="editImageUrl"/></div>
+    <button (click)="updateProduct()">Update</button>
+</div>
+<h3>Delete By Id</h3>
+<input type="text" [(ngModel)]="deleteId">
+<button (click)="deleteProduct()">Delete Product</button>

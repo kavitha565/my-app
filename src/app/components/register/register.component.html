@@ -1,0 +1,45 @@
+<div class="mainContainer">
+  <div class="content">
+      <div class="heading">Sign Up</div>
+      <form name="registerForm" [formGroup]="registerForm">
+         <div class="formInput">
+            <p>Name</p>
+            <input class="inputBox" type="text" name="name" formControlName="name" required/>
+            <div *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.dirty || registerForm.controls.name.touched)">
+               <span *ngIf="registerForm.controls.name.errors.required" class="errorMsg">name required</span>
+            </div>
+         </div>
+          <div class="formInput">
+            <p>Email</p>
+            <input class="inputBox" type="text" name="email" formControlName="email" required/>
+            <div *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched)">
+               <span *ngIf="registerForm.controls.email.errors.required" class="errorMsg">email required</span>
+            </div>
+          </div>
+          <div class="formInput">
+            <p>Mobile</p>
+            <input class="inputBox" type="text" name="mobile" formControlName="mobile" required/>
+            <div *ngIf="registerForm.controls.mobile.invalid && (registerForm.controls.mobile.dirty || registerForm.controls.mobile.touched)">
+               <span *ngIf="registerForm.controls.mobile.errors.required" class="errorMsg">mobile required</span>
+            </div>
+         </div>
+          <div class="formInput">
+             <p>Username</p>
+             <input class="inputBox" type="text" name="username"  formControlName="username" required autocomplete="off"/>
+             <div *ngIf="registerForm.controls.username.invalid && (registerForm.controls.username.dirty || registerForm.controls.username.touched)">
+               <span *ngIf="registerForm.controls.username.errors.required" class="errorMsg">username required</span>
+            </div>
+          </div>
+          <div class="formInput">
+            <p>Password</p>
+            <input class="inputBox" type="password" name="password" formControlName="password" required autocomplete="off"/>
+            <div *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched)">
+               <span *ngIf="registerForm.controls.password.errors.required" class="errorMsg">password required</span>
+            </div>
+         </div>
+         <div class="registerBtnDiv">
+            <button class="registerBtn" (click)="register(registerForm)" [disabled]="registerForm.invalid">Register</button>
+         </div>
+      </form>
+  </div>
+</div>
