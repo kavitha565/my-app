@@ -15,12 +15,15 @@
         <i class="fa fa-trash" (click)="showDeletePopup=true;deleteCourseId=item._id"></i>
       </div>
     </div>
-    <div class="operations">
+    <div class="addCourse">
+      <i class="fa fa-plus-circle" aria-hidden="true" (click)="showPopup=true"></i>
+    </div>
+    <!-- <div class="operations">
       <ul>
         <li><i class="fa fa-plus-circle" aria-hidden="true" (click)="showPopup=true"></i></li>
-        <!-- <li><i class="fa fa-trash" aria-hidden="true" (click)="reload()"></i></li> -->
+         <li><i class="fa fa-trash" aria-hidden="true" (click)="reload()"></i></li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </div>
 <!-- <h1>Lazy loading demo</h1>
@@ -72,7 +75,7 @@
             </button>
           </div>
           <div class="modal-body" style="padding:20px">
-           <p>Are you sure you want to delete course??</p>
+           <p>Are you sure you want to delete course?</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" (click)="deleteCourse()">Yes</button>

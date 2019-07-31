@@ -61,6 +61,7 @@ export class DashboardComponent implements OnInit {
   deleteCourse(){
     //delete course using id
     this.isLoading = true;
+    this.deleteCourseId = "sdfsdfsdf123";
     this.cs.deleteCourseService(this.deleteCourseId)
       .subscribe((response:any) =>{
         if(response && response.responseCode==200 && response.responseStatus=='success'){

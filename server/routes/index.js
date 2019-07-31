@@ -4,6 +4,7 @@ const Product = require('../models/product');
 const User = require('../models/user');
 const Courses = require('../models/courses');
 const path = require('path');
+const mongodb = require('mongodb');
 const responseJson = {};
 function setResponseJson(){
     responseJson.responseCode = 200;
@@ -213,13 +214,26 @@ router.post('/api/courses',(req,res)=>{
 router.delete('/api/courses/:id',(req,res)=>{
     setResponseJson();
     let course = new Courses();
-    course.deleteCourse(req.params.id)
-        .then(response=>{
-            responseJson.data.message = "Course deleted successfully"
-            res.status(200).send(responseJson);
+    //check if course id exists or not
+    course.getCourses()
+        .then((response)=>{
+            let validId = response.find(item => item._id.toString() === req.params.id)
+            if(validId){
+                course.deleteCourse(req.params.id)
+                .then(response=>{
+                    responseJson.data.message = "Course deleted successfully"
+                    res.status(200).send(responseJson);
+                })
+                .catch(err=>{
+                    console.log(err);
+                })
+            }else{
+                res.status(404).send("Course Id not found");
+            }
         })
-        .catch(err=>{
+        .catch((err)=>{
             console.log(err);
         })
+    
 })
 module.exports = router;
