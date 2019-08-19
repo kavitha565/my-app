@@ -1,0 +1,36 @@
+.example-container1{
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+    width: 150px;
+    float: left;
+    margin-right: 40px;
+    .example-box{
+        background: white;
+        margin: 10px;
+        line-height: 75px;
+        font-size: 25px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+.example-container2{
+    display: flex;
+    background: #eee;
+    flex-wrap: wrap;
+    width: 1000px;
+    .example-box{
+        flex: 1 0 21%; //flex-grow(how much flex item can grow with respect to remaining) flex-shrink(shrink) flex-basis(length of flex item) 
+        background: white;
+        margin: 10px;
+        line-height: 75px;
+        font-size: 25px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+.example-container2 .example-box:nth-child(4n){
+}
+.fa-arrows{
+    font-size: 30px;
+}

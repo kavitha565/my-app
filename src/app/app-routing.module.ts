@@ -6,6 +6,8 @@ import { DashboardComponent } from '../app/components/dashboard/dashboard.compon
 import { ProductsComponent } from '../app/components/products/products.component'
 import { CourseInfoComponent } from '../app/components/course-info/course-info.component'
 import { DataComponent } from '../app/components/data/data.component'
+import { SrsComponent } from '../app/components/srs/srs.component'
+import { MaterialComponent } from './components/material/material.component';
 
 const routes: Routes = [
   {path: 'login', component : LoginComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path: 'product',component: ProductsComponent},
   {path: 'courseInfo',component : CourseInfoComponent},
   {path: 'data',component : DataComponent},
+  {path: 'srs',component : SrsComponent},
+  {path: 'material',component : MaterialComponent},
   {
     path: 'customer',
     //loadChildren : ()=>import('../app/modules/customer/customer.module').then((mod)=>mod.CustomerModule)

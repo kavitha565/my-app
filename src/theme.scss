@@ -1,0 +1,33 @@
+// Theme can have only following items with different colors
+
+// A primary palette: colors most widely used across all screens and components.
+// An accent palette: colors used for the floating action button and interactive elements.
+// A warn palette: colors used to convey error state.
+// A foreground palette: colors for text and icons.
+// A background palette: colors used for element backgrounds.
+@import '../node_modules/@angular/material/theming';
+@include mat-core();
+$my-app-primary: mat-palette($mat-deep-purple);
+$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn:    mat-palette($mat-deep-orange);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);
+.pink-theme{
+    $alter-primary: mat-palette($mat-pink);
+    $alter-accent:  mat-palette($mat-lime, 500);
+    $alter-theme: mat-light-theme($alter-primary, $alter-accent);
+    @include angular-material-theme($alter-theme);
+}
+.green-theme{
+    $alter-primary: mat-palette($mat-teal);
+    $alter-accent:  mat-palette($mat-yellow, 900);
+    $alter-theme: mat-light-theme($alter-primary, $alter-accent);
+    @include angular-material-theme($alter-theme);
+}
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-blue);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+// Include the theme styles for only specified components.
+//@include mat-button-theme($dark-theme);

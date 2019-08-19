@@ -1,0 +1,91 @@
+<!-- <mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" [(opened)]="opened" position="start" class="side-nav">Sidenav content</mat-sidenav>
+  <mat-sidenav-content class="main-content">
+    <mat-checkbox [(ngModel)]="opened">Open navbar</mat-checkbox>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+<div class="example-container default" [class.example-is-mobile]="mobileQuery.matches"  [class.pink-theme]="color==='pink'" [class.green-theme]="color==='green'">
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">SRS Acquiom</h1>
+      <div>
+          <button mat-button matTooltip="Select a theme" [matMenuTriggerFor]="menu">
+              <mat-icon>format_color_fill</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+              <mat-radio-group [(ngModel)]="color">
+                <div mat-menu-item>
+                    <mat-radio-button value="">Default</mat-radio-button>
+                </div>
+                <div mat-menu-item>
+                    <mat-radio-button value="pink">Pink</mat-radio-button>
+                </div>
+                <div mat-menu-item>
+                    <mat-radio-button value="green">Green</mat-radio-button>
+                </div>
+              </mat-radio-group>
+          </mat-menu>
+      </div>
+    </mat-toolbar>
+  
+    <mat-sidenav-container 
+    cdkDropListGroup
+    class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav 
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" 
+      fixedTopGap="56">
+        <mat-nav-list
+        cdkDropList
+        [cdkDropListData]="icons"
+        (cdkDropListDropped)="dropItem($event)"
+        [cdkDropListEnterPredicate]="notEnterPredicate">
+          <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+          <mat-list-item *ngFor="let icon of icons" [cdkDragData]="item" cdkDrag>
+            <mat-icon>{{icon}}</mat-icon>
+          </mat-list-item>
+          <!-- <mat-list-item>
+            <mat-icon>account_circle</mat-icon>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>location_on</mat-icon>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>payment</mat-icon>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>work</mat-icon>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>contact_support</mat-icon>
+          </mat-list-item> -->
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content 
+      class="card-container"
+      cdkDropList
+      [cdkDropListData]="items"
+      (cdkDropListDropped)="dropItem($event)">
+          <mat-card class="card-item" *ngFor="let item of items" [cdkDragData]="item" cdkDrag>
+              <mat-card-content>{{item}}</mat-card-content>
+              <mat-card-actions>
+                  <button mat-raised-button color="primary">LIKE</button>
+                  <button mat-raised-button color="accent">SHARE</button>
+              </mat-card-actions>
+          </mat-card>
+      </mat-sidenav-content>
+      <!-- <mat-sidenav-content>
+          <div cdkDropList
+          cdkDropListOrientation="horizontal"
+          class="example-container2" 
+          [cdkDropListData]="items"
+          (cdkDropListDropped)="dropItem($event)">
+          <div class="example-box" *ngFor="let item of items" [cdkDragData]="item" cdkDragLockAxis="y" cdkDrag>{{item}}
+            <i *cdkDragPreview class="fa fa-arrows" aria-hidden="true"></i>
+          </div>
+        </div>
+      </mat-sidenav-content> -->
+    </mat-sidenav-container>
+  </div>

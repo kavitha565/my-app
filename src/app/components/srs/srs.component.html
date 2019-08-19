@@ -1,0 +1,23 @@
+<div cdkDropListGroup>
+  <div cdkDropList
+    class="example-container1" 
+    [cdkDropListData]="all"
+    (cdkDropListDropped)="dropItem($event)"
+    [cdkDropListEnterPredicate]="notEnterPredicate"
+    cdkDropListSortingDisabled>
+    <div class="example-box" *ngFor="let item of all" [cdkDragData]="item" cdkDrag>{{item}}
+      <i *cdkDragPreview class="fa fa-arrows" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div cdkDropList
+    cdkDropListOrientation="horizontal"
+    class="example-container2" 
+    [cdkDropListData]="even"
+    (cdkDropListDropped)="dropItem($event)"
+    [cdkDropListEnterPredicate]="enterPredicate">
+    <div class="example-box" *ngFor="let item of even" [cdkDragData]="item" cdkDragLockAxis="y" cdkDrag>{{item}}
+      <i *cdkDragPreview class="fa fa-arrows" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+<!-- cdkDragData attaches a data property to dragged instance-->

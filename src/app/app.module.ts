@@ -15,6 +15,10 @@ import { DataComponent } from './components/data/data.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SortByPipePipe } from './sort-by-pipe.pipe';
 import { FilterPipe } from './filter.pipe'; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SrsComponent } from './components/srs/srs.component';
+import { MaterialComponent } from './components/material/material.component';
+import { DemoMaterialModule } from '../app/material-module'
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { FilterPipe } from './filter.pipe';
     TestDirective,
     DataComponent,
     SortByPipePipe,
-    FilterPipe
+    FilterPipe,
+    SrsComponent,
+    MaterialComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,9 @@ import { FilterPipe } from './filter.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     AutocompleteLibModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    DemoMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
