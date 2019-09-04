@@ -3,7 +3,7 @@
       <div class="heading">Sign In</div>
       <form name="loginForm" [formGroup]="loginForm">
          <div class="formInput">
-            <p>Username</p>
+            <p appHighlight [highLightColor]='color'>Username</p>
             <input class="inputBox" type="text" name="username" formControlName="username" [(ngModel)]="username" autocomplete="off" required/>
             <div *ngIf="loginForm.controls.username.invalid && (loginForm.controls.username.dirty || loginForm.controls.username.touched)">
                <span *ngIf="loginForm.controls.username.errors.required" class="errorMsg">Username required</span>
@@ -21,7 +21,7 @@
       </div>
     </form>
      <div class="registerLinkDiv">
-       Don't have account? <a class="registerLink" href="/register">Register here</a>
+       Don't have account? <a class="registerLink" (click)="register()">Register here</a>
      </div>
   </div>
 </div>

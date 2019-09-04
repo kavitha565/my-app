@@ -1,0 +1,12 @@
+<div class="main-container">
+    <mat-toolbar color="primary">
+        <mat-nav-list class="list-horizontal">
+            <a mat-list-item (click)="showTab('todo')">To Do</a>
+            <a mat-list-item (click)="showTab('data')">Content</a>
+            <a mat-list-item (click)="showTab('reference')">References</a>
+        </mat-nav-list>
+      </mat-toolbar> 
+    <app-todo *ngIf="tabName=='todo'"></app-todo>
+    <app-data *ngIf="tabName=='data'"></app-data>
+    <app-references *ngIf="tabName=='reference'"></app-references>
+</div>

@@ -12,20 +12,19 @@ import { nextTick } from 'q';
 export class DashboardComponent implements OnInit {
   isLoading:boolean = false
   showPopup:boolean = false
-  showOperations:boolean = false
   showDeletePopup:boolean = false
   deleteCourseId:any = ''
   courses:Array<String>
   addForm = this.fb.group({
     courseName : ['',Validators.required],
-    imageUrl : ['',Validators.required]
+    image : ['',Validators.required]
   })
   constructor(private router:Router,private cs: CommonService,private fb:FormBuilder) {
   }
   addCourse = function(){
     let courseData = {
       course : this.addForm.controls.courseName.value,
-      imageUrl : this.addForm.controls.imageUrl.value
+      image : this.addForm.controls.image.value
     }
     this.cs.addCourseService(courseData)
       .subscribe((response:any)=>{
@@ -61,7 +60,7 @@ export class DashboardComponent implements OnInit {
   deleteCourse(){
     //delete course using id
     this.isLoading = true;
-    this.deleteCourseId = "sdfsdfsdf123";
+    //this.deleteCourseId = "sdfsdfsdf123";
     this.cs.deleteCourseService(this.deleteCourseId)
       .subscribe((response:any) =>{
         if(response && response.responseCode==200 && response.responseStatus=='success'){

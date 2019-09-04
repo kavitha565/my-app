@@ -3,8 +3,11 @@ const router = express.Router();
 const Product = require('../models/product');
 const User = require('../models/user');
 const Courses = require('../models/courses');
+const Todo = require('../models/todo');
 const path = require('path');
 const mongodb = require('mongodb');
+const multer = require('multer');
+const upload = multer({dest:'uploads/'})
 const responseJson = {};
 function setResponseJson(){
     responseJson.responseCode = 200;
@@ -128,7 +131,7 @@ router.post('/api/register',(req,res)=>{
 router.post('/api/product/addProduct',(req,res)=>{
     setResponseJson();
     console.log(req.body);
-    let product = new Product(req.body.title,req.body.price,req.body.description,req.body.imageUrl);
+    let product = new Product(req.body.title,req.body.price,req.body.description,req.body.image);
     product.save()
         .then((response)=>{
             responseJson.data.message = "Product saved successfully"
@@ -165,7 +168,7 @@ router.get('/api/product/getProductBySearchData',(req,res)=>{
 })
 router.post('/api/product/updateProduct',(req,res)=>{
     setResponseJson();
-    let product = new Product(req.body.title,req.body.price,req.body.description,req.body.imageUrl,req.body.id,"update");
+    let product = new Product(req.body.title,req.body.price,req.body.description,req.body.image,req.body.id,"update");
     product.save()
         .then((response)=>{
             res.status(200).send(responseJson);
@@ -201,7 +204,7 @@ router.get('/api/courses',(req,res)=>{
 router.post('/api/courses',(req,res)=>{
     setResponseJson();
     console.log(req.body);
-    let course = new Courses(req.body.course,req.body.imageUrl);
+    let course = new Courses(req.body.course,req.file);
     course.addCourse()
         .then(response=>{
             responseJson.data.message = "Course added successfully"
@@ -235,5 +238,39 @@ router.delete('/api/courses/:id',(req,res)=>{
             console.log(err);
         })
     
+})
+//Todo route
+router.post('/api/todo',(req,res)=>{
+    setResponseJson();
+    let todo = new Todo(req.body.id,req.body.todo,req.body.done);
+    todo.save()
+    .then((response)=>{
+        responseJson.data.message = "Saved successfully"
+        res.status(200).send(responseJson);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
+router.get('/api/todo',(req,res)=>{
+    setResponseJson();
+    let todo = new Todo();
+    todo.get()
+    .then((response)=>{
+        responseJson.data = response;
+        res.status(200).send(responseJson);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
+//file upload route
+router.post('/api/uploadFile',(req,res)=>{
+    console.log("request body data"+req.body);
+    console.log("file data"+req.file);
+    setResponseJson();
+    responseJson.data.message = "file uploaded successfully"
+    res.status(200).send(responseJson);
+
 })
 module.exports = router;

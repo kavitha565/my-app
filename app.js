@@ -3,10 +3,12 @@ const http = require('http');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const config = require('./server/config');
+const multer = require('multer');
 const mongoConnect = require('./server/utils/database').mongoConnect;
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+app.use(multer().single('image')); //multer has func called single which expects only single file to which input name that holds the file send as arg
 //setting env 
 process.env.NODE_ENV = 'development';
 //Based on env load the config data

@@ -8,10 +8,10 @@
 <!--Loader end here-->
 <div class="mainContainer">
   <div class="coursesContainer">
-    <div *ngFor="let item of courses" class="course parent" [ngStyle]="{'background-image': 'url(' + item.imageUrl + ')'}" (mouseover)="showOperations=true" (mouseout)="showOperations=false" >
-      <!-- <span *ngIf="!item.imageUrl||item.imageUrl==''" class="courseItem">{{item.course}}</span>  -->
+    <div *ngFor="let item of courses" class="course parent" [ngStyle]="{'background-image': 'url(' + item.image + ')'}" >
+      <!-- <span *ngIf="!item.image||item.image==''" class="courseItem">{{item.course}}</span>  -->
       <div class="courseOperation hidden">
-        <i class="fa fa-eye" routerLink="/data"></i>
+        <i class="fa fa-eye" routerLink="/details"></i>
         <i class="fa fa-trash" (click)="showDeletePopup=true;deleteCourseId=item._id"></i>
       </div>
     </div>
@@ -40,7 +40,7 @@
           </button>
         </div>
         <div class="modal-body" style="padding:20px">
-          <form name="addForm" [formGroup]="addForm">
+          <form name="addForm" [formGroup]="addForm" enctype="multipart/form-data">
             <div class="formElement">
                 <label>Course name&nbsp; &nbsp;</label>
                 <input type="text" name="courseName" formControlName="courseName"/>
@@ -48,11 +48,18 @@
                   <span *ngIf="addForm.controls.courseName.errors.required" class="errorMsg">Couse required</span>
                </div>
             </div>
-            <div class="formElement">
+            <!-- <div class="formElement">
                 <label>Image Url&nbsp; &nbsp;</label>
-                <input type="text" name="imageUrl" formControlName="imageUrl"/>
-                <div *ngIf="addForm.controls.imageUrl.invalid && (addForm.controls.imageUrl.dirty || addForm.controls.imageUrl.touched)">
-                  <span *ngIf="addForm.controls.imageUrl.errors.required" class="errorMsg">Image Url required</span>
+                <input type="text" name="image" formControlName="image"/>
+                <div *ngIf="addForm.controls.image.invalid && (addForm.controls.image.dirty || addForm.controls.image.touched)">
+                  <span *ngIf="addForm.controls.image.errors.required" class="errorMsg">Image Url required</span>
+                </div>
+            </div> -->
+            <div class="formElement">
+              <label>Upload image&nbsp; &nbsp;</label>
+              <input type="file" name="image" formControlName="image"/>
+                <div *ngIf="addForm.controls.image.invalid && (addForm.controls.image.dirty || addForm.controls.image.touched)">
+                  <span *ngIf="addForm.controls.image.errors.required" class="errorMsg">Image  required</span>
                 </div>
             </div>
           </form>

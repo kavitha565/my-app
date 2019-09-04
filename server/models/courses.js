@@ -1,9 +1,9 @@
 const mongodb = require('mongodb');
 const getDB = require('../utils/database').getDB;
 class Courses{
-    constructor(course,imageUrl){
+    constructor(course,image){
         this.course = course
-        this.imageUrl = imageUrl
+        this.image = image
     }
     addCourse(){
         const db = getDB();

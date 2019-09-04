@@ -73,4 +73,10 @@ export class CommonService {
   getProductInfoService(){
     return this.http.get(environment.endpoint.getProductsInfo)
   }
+  saveTodoListService(data){
+    return this.http.post(environment.endpoint.todoListUrl,data)
+  }
+  getTodoListService(){
+    return this.http.get(environment.endpoint.todoListUrl)
+  }
 }

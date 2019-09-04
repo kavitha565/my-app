@@ -6,24 +6,29 @@
     "auditLog": "logs/.5f2409fb0159884910c0b4783147167fd99219fb-audit.json",
     "files": [
         {
-            "date": 1564563044267,
-            "name": "logs/common-2019-07-31.log",
-            "hash": "431a216b05936936f707a8dd9fc71887"
+            "date": 1566972826048,
+            "name": "logs/common-2019-08-28.log",
+            "hash": "90e230e0001d07b7169eac2d0d2441a9"
         },
         {
-            "date": 1565000677199,
-            "name": "logs/common-2019-08-05.log",
-            "hash": "12cbee096ad59bf4122b724fae05a099"
+            "date": 1567058200874,
+            "name": "logs/common-2019-08-29.log",
+            "hash": "16cd948f9d986edea139cbc8e4034206"
         },
         {
-            "date": 1565071684101,
-            "name": "logs/common-2019-08-06.log",
-            "hash": "991777876d846042308ff630e64fb9c7"
+            "date": 1567144626595,
+            "name": "logs/common-2019-08-30.log",
+            "hash": "6ebfd469a29e2ea67f70ccafd4e177da"
         },
         {
-            "date": 1565158969914,
-            "name": "logs/common-2019-08-07.log",
-            "hash": "d18e1798292c562c47c56cc88fe515a2"
+            "date": 1567491618588,
+            "name": "logs/common-2019-09-03.log",
+            "hash": "85ed006483e2b65f17d421e4e6e35310"
+        },
+        {
+            "date": 1567576845454,
+            "name": "logs/common-2019-09-04.log",
+            "hash": "15ba42e9084dde6369951ff4c9dc17f6"
         }
     ]
 }

@@ -5,16 +5,20 @@
 export const environment = {
   production: false,
   endpoint : {
-    loginUrl : "http://localhost:4000/api/login",
-    registerUrl : "http://localhost:4000/api/register",
-    productAddUrl : "http://localhost:4000/api/product/addProduct",
-    productGetAllUrl : "http://localhost:4000/api/product/getAllProduct",
-    productGetUrl :  "http://localhost:4000/api/product/getProductBySearchData",
-    productUpdateUrl : "http://localhost:4000/api/product/updateProduct",
-    productDeleteUrl : "http://localhost:4000/api/product/deleteProduct",
+
+    loginUrl : "/api/login",
+    registerUrl : "/api/register",
+    productAddUrl : "/api/product/addProduct",
+    productGetAllUrl : "/api/product/getAllProduct",
+    productGetUrl :  "/api/product/getProductBySearchData",
+    productUpdateUrl : "/api/product/updateProduct",
+    productDeleteUrl : "/api/product/deleteProduct",
     getCountriesUrl : "http://demo0674380.mockable.io/getCountries",
     getProductsInfo :"http://demo0674380.mockable.io/getProductData",
-    course : "http://localhost:4000/api/courses"
+    course : "/api/courses",
+    todoListUrl : '/api/todo'
+
+    
   }
 };
 

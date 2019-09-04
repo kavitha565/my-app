@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag, CdkDropListContainer, CdkDropList} from '@angular/cdk/drag-drop';
 
 @Component({
@@ -35,7 +36,7 @@ export class MaterialComponent implements OnInit {
   }
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private http:HttpClient) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)'); // to set max width of mobile device to match the media for mobile related config
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);

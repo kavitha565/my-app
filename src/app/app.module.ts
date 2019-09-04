@@ -17,8 +17,14 @@ import { SortByPipePipe } from './sort-by-pipe.pipe';
 import { FilterPipe } from './filter.pipe'; 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SrsComponent } from './components/srs/srs.component';
-import { MaterialComponent } from './components/material/material.component';
-import { DemoMaterialModule } from '../app/material-module'
+//import { MaterialComponent } from './components/material/material.component';
+import { DemoMaterialModule } from '../app/material-module';
+import { HighlightDirective } from './directives/highlight.directive';
+import { TooltipDirective } from './directives/tooltip.directive';
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { TodoComponent } from './components/todo/todo.component';
+import { ReferencesComponent } from './components/references/references.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +39,13 @@ import { DemoMaterialModule } from '../app/material-module'
     SortByPipePipe,
     FilterPipe,
     SrsComponent,
-    MaterialComponent
+    HighlightDirective,
+    TooltipDirective,
+    CourseDetailsComponent,
+    NavbarComponent,
+    TodoComponent,
+    ReferencesComponent
+    //MaterialComponent
   ],
   imports: [
     BrowserModule,
