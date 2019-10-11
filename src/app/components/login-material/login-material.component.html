@@ -1,0 +1,19 @@
+  <mat-card class="card-container">
+    <mat-card-title><b>Log in</b></mat-card-title>
+    <mat-card-content>
+        <form name="loginForm" [formGroup]="loginForm" class="row">
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput placeholder="username" formControlName="username"/>
+            <mat-error *ngIf="loginForm.controls.username.invalid && (loginForm.controls.username.dirty || loginForm.controls.username.touched) && loginForm.controls.username.errors.required">Username required</mat-error>
+          </mat-form-field>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput placeholder="password" type='password' formControlName="password"/>
+            <mat-error *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched) && loginForm.controls.password.errors.required">Password required</mat-error>
+          </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="login()">Log in</button>
+    </mat-card-actions>
+  </mat-card>
+

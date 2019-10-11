@@ -1,3 +1,25 @@
-<p>
-  references works!
-</p>
+<div class="carousal-container">
+  <mat-carousel
+  timings="250ms ease-in"
+  [autoplay]="true"
+  interval="5000"
+  color="accent"
+  maxWidth="50%"
+  proportion="40"
+  slides="5"
+  [loop]="true"
+  [hideArrows]="false"
+  [hideIndicators]="false"
+  [useKeyboard]="true"
+  [useMouseWheel]="false"
+  orientation="ltr"
+>
+  <mat-carousel-slide
+    #matCarouselSlide
+    *ngFor="let slide of slides; let i = index"
+    [image]="slide"
+    [hideOverlay]="true"
+    [disabled]="false"
+  ></mat-carousel-slide>
+</mat-carousel>
+</div>

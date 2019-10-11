@@ -8,6 +8,11 @@ html, body {
     margin: 0;
     padding: 0;
   }
+body{
+   // background: url('./assets/images/bg.png') no-repeat;
+    background: #f6f6f6;
+    background-size: cover;
+}
 #overlay{
     width: 100%;
     height: 100%;

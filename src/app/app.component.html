@@ -1,2 +1,14 @@
-<router-outlet></router-outlet> 
-<!--This is the place where component wil be placed as sibling to router-outlet -->
+
+<mat-toolbar class='row' color='primary'>
+    <span class="websiteName" routerLink='/login'>Learning App</span>
+    <span class="example-spacer"></span>
+    <div *ngIf="!isLogin">
+      <button routerLink='/' mat-button>Log in</button>
+      <button routerLink='/register' mat-raised-button>Register</button>
+    </div>
+    <mat-icon *ngIf="isLogin">account_circle</mat-icon>
+  </mat-toolbar>
+<!--This is the place where component wil be placed as sibling to router-outlet-->
+<div class="main-cotainer">
+  <router-outlet (activate)="changeOfRoutes()"></router-outlet>
+</div>

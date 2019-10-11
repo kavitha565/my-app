@@ -1,0 +1,29 @@
+<div class='container'>
+    <div class="row">
+        <div class="addContainer">
+          <button mat-fab matTooltip="Add course" (click)="addPopup()" color="primary"><mat-icon>add</mat-icon></button>
+        </div>
+          <mat-card *ngFor="let item of courses" class="card-container">
+              <mat-card-header>
+                <mat-card-title>{{item.course}}</mat-card-title>
+              </mat-card-header>
+              <!-- <img mat-card-image [src]="item.image" alt="course image" height="180px"> -->
+              <mat-card-content>
+                  <p>
+                    Small description about the course!!
+                  </p>
+                </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color='primary' routerLink="/details">VIEW</button>
+                <button mat-raised-button color='warn' (click)="openDialog(item._id)">DELETE</button>
+              </mat-card-actions>
+          </mat-card>
+      </div>
+      <ng-template #modalPopup>
+        <h1 matDialogTitle>Are you sure you want to delete course?</h1>
+        <div matDialogActions>
+          <button mat-raised-button color="primary" (click)="deleteCourse()">Yes</button>
+          <button mat-raised-button [matDialogClose]>No</button>
+        </div>
+      </ng-template>
+</div>

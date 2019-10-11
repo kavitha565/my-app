@@ -1,0 +1,44 @@
+.container{
+    max-width: 1140px;
+    margin:0 auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.addContainer{
+    flex: 1 0 100%;
+    text-align: right;
+    button{
+        margin-right: 30px;
+        margin-top: 15px;
+    }
+}
+.card-container {
+    flex-basis: 30%;
+    margin: 1em;
+    mat-card-content{
+        min-height: 60px;
+    }
+}
+
+/*Tablets*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+	.card-container{
+        flex-basis: 45%;
+    }
+	
+}
+
+/*Mobiles*/
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .card-container{
+        flex-basis: 100%;
+    }
+  
+}
+
+  

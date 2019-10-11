@@ -4,21 +4,25 @@ import { LoginComponent } from '../app/components/login/login.component'
 import { RegisterComponent } from '../app/components/register/register.component'
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component'
 import { ProductsComponent } from '../app/components/products/products.component'
-import { CourseInfoComponent } from '../app/components/course-info/course-info.component'
 import { DataComponent } from '../app/components/data/data.component'
 import { SrsComponent } from '../app/components/srs/srs.component'
 import { CourseDetailsComponent } from '../app/components/course-details/course-details.component'
 import { MaterialComponent } from './components/material/material.component';
+import { AutosuggestComponent } from './components/autosuggest/autosuggest.component';
+import { LoginMaterialComponent } from './components/login-material/login-material.component';
+import { RegisterMaterialComponent } from './components/register-material/register-material.component';
+import { DashboardMaterialComponent } from './components/dashboard-material/dashboard-material.component';
 
 const routes: Routes = [
-  {path: 'login',component: LoginComponent},
-  {path: 'register',component: RegisterComponent},
+  {path: 'login',component: LoginMaterialComponent},
+  {path: 'register',component: RegisterMaterialComponent},
   {path: 'dashboard',component: DashboardComponent},
+  {path: 'dashboard-materail',component: DashboardMaterialComponent},
   {path: 'product',component: ProductsComponent},
-  {path: 'courseInfo',component : CourseInfoComponent},
   {path: 'data',component : DataComponent},
   {path: 'srs',component : SrsComponent},
   {path: 'details',component : CourseDetailsComponent},
+  {path: 'autosuggest',component : AutosuggestComponent},
  // {path: 'material',component : MaterialComponent},
   {
     path: 'customer',
@@ -34,7 +38,7 @@ const routes: Routes = [
     path : 'material',
     loadChildren : '../app/modules/material/material.module#MaterialModule'
   },
-  { path: '**', component:LoginComponent}  //wildcard routes
+  { path: '', pathMatch: 'full', redirectTo: 'login' }  //wildcard routes
 ];
 
 @NgModule({

@@ -8,7 +8,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './components/products/products.component';
-import { CourseInfoComponent } from './components/course-info/course-info.component';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { TestDirective } from './components/test.directive';
 import { DataComponent } from './components/data/data.component';
@@ -17,15 +16,19 @@ import { SortByPipePipe } from './sort-by-pipe.pipe';
 import { FilterPipe } from './filter.pipe'; 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SrsComponent } from './components/srs/srs.component';
-//import { MaterialComponent } from './components/material/material.component';
 import { DemoMaterialModule } from '../app/material-module';
 import { HighlightDirective } from './directives/highlight.directive';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { TodoComponent } from './components/todo/todo.component';
-import { ReferencesComponent } from './components/references/references.component'
-
+import { ReferencesComponent } from './components/references/references.component';
+import { AutosuggestComponent } from './components/autosuggest/autosuggest.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { LoginMaterialComponent } from './components/login-material/login-material.component';
+import { RegisterMaterialComponent } from './components/register-material/register-material.component';
+import { DashboardMaterialComponent } from './components/dashboard-material/dashboard-material.component';
+import { DialogContentComponent } from './components/dashboard-material/dashboard-material.component';
+import { ModalPopupComponent } from './components/dashboard-material/dashboard-material.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,6 @@ import { ReferencesComponent } from './components/references/references.componen
     RegisterComponent,
     DashboardComponent,
     ProductsComponent,
-    CourseInfoComponent,
     TestDirective,
     DataComponent,
     SortByPipePipe,
@@ -42,11 +44,16 @@ import { ReferencesComponent } from './components/references/references.componen
     HighlightDirective,
     TooltipDirective,
     CourseDetailsComponent,
-    NavbarComponent,
     TodoComponent,
-    ReferencesComponent
-    //MaterialComponent
+    ReferencesComponent,
+    AutosuggestComponent,
+    LoginMaterialComponent,
+    RegisterMaterialComponent,
+    DashboardMaterialComponent,
+    DialogContentComponent,
+    ModalPopupComponent
   ],
+  entryComponents: [DialogContentComponent,ModalPopupComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -56,7 +63,8 @@ import { ReferencesComponent } from './components/references/references.componen
     AutocompleteLibModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    MatCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

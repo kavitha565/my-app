@@ -1,0 +1,31 @@
+<mat-card class="card-container">
+    <mat-card-title><b>Register</b></mat-card-title>
+    <mat-card-content>
+        <form name="registerForm" [formGroup]="registerForm" class="row">
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput placeholder="Name" formControlName="name"/>
+            <mat-error *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.dirty || registerForm.controls.name.touched) && registerForm.controls.name.errors.required">Name required</mat-error>
+          </mat-form-field>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput placeholder="Email" formControlName="email"/>
+            <mat-error *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched) && registerForm.controls.email.errors.required">Email required</mat-error>
+          </mat-form-field>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput placeholder="Mobile" formControlName="mobile"/>
+            <mat-error *ngIf="registerForm.controls.mobile.invalid && (registerForm.controls.mobile.dirty || registerForm.controls.mobile.touched) && registerForm.controls.mobile.errors.required">Mobile required</mat-error>
+          </mat-form-field>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput placeholder="username" formControlName="username"/>
+            <mat-error *ngIf="registerForm.controls.username.invalid && (registerForm.controls.username.dirty || registerForm.controls.username.touched) && registerForm.controls.username.errors.required">Username required</mat-error>
+          </mat-form-field>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput placeholder="password" type='password' formControlName="password"/>
+            <mat-error *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched) && registerForm.controls.password.errors.required">Password required</mat-error>
+          </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [disabled]="registerForm.invalid" (click)="register(registerForm)">Register</button>
+    </mat-card-actions>
+  </mat-card>
+

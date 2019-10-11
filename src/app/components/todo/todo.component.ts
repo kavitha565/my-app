@@ -14,7 +14,7 @@ export class TodoComponent implements OnInit {
   id:string
   constructor(private cs:CommonService) { }
   addToList(){
-    if(this.taskItem!=''){
+    if(this.taskItem!='' && this.todo){
       this.todo.push(this.taskItem)
       this.taskItem = ''
     }

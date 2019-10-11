@@ -1,0 +1,30 @@
+
+.card-container{
+    max-width: 450px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10vh;
+    padding: 3em;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    justify-content: center;
+    align-content: center;
+}
+mat-form-field{
+    margin-top: 10px;
+}
+ /* 
+	##Device = Most of the Smartphones Mobiles (Portrait)
+	##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+	.card-container{
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+  }

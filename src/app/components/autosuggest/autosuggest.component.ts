@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../../services/common.service';
-
 @Component({
-  selector: 'app-course-info',
-  templateUrl: './course-info.component.html',
-  styleUrls: ['./course-info.component.scss']
+  selector: 'app-autosuggest',
+  templateUrl: './autosuggest.component.html',
+  styleUrls: ['./autosuggest.component.scss']
 })
-export class CourseInfoComponent implements OnInit {
+export class AutosuggestComponent implements OnInit {
       keyword = 'name';
+      //data:Array<object>
       data = [
         {
           id: 1,
