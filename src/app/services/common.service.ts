@@ -31,7 +31,10 @@ export class CommonService {
   constructor(private http:HttpClient) {
   }
   loginService(username,password){
-    return this.http.get(environment.endpoint.loginUrl+"?username="+username+"&password="+password); //returns observable
+    return this.http.get(environment.endpoint.loginUrl+"?username="+username+"&password="+password,{
+      // reportProgress : true,
+      // observe : 'events'
+    }); //returns observable
   }
   registerService(data){
     return this.http.post(environment.endpoint.registerUrl,data)
