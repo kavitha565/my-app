@@ -12,8 +12,10 @@ import { AutosuggestComponent } from './components/autosuggest/autosuggest.compo
 import { LoginMaterialComponent } from './components/login-material/login-material.component';
 import { RegisterMaterialComponent } from './components/register-material/register-material.component';
 import { DashboardMaterialComponent } from './components/dashboard-material/dashboard-material.component';
+import { SavePDFComponent } from './components/save-pdf/save-pdf.component';
 
 const routes: Routes = [
+  {path: 'pdf', component: SavePDFComponent},
   {path: 'login',component: LoginMaterialComponent},
   {path: 'register',component: RegisterMaterialComponent},
   {path: 'dashboard',component: DashboardComponent},

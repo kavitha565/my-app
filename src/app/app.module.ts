@@ -29,6 +29,7 @@ import { RegisterMaterialComponent } from './components/register-material/regist
 import { DashboardMaterialComponent } from './components/dashboard-material/dashboard-material.component';
 import { DialogContentComponent } from './components/dashboard-material/dashboard-material.component';
 import { ModalPopupComponent } from './components/dashboard-material/dashboard-material.component';
+import { SavePDFComponent } from './components/save-pdf/save-pdf.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { ModalPopupComponent } from './components/dashboard-material/dashboard-m
     RegisterMaterialComponent,
     DashboardMaterialComponent,
     DialogContentComponent,
-    ModalPopupComponent
+    ModalPopupComponent,
+    SavePDFComponent
   ],
   entryComponents: [DialogContentComponent,ModalPopupComponent],
   imports: [
